@@ -1,11 +1,21 @@
 import styled from "@emotion/styled";
-import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Menu,
+  Toolbar,
+  Typography,
+  MenuItem,
+} from "@mui/material";
 import PetsIcon from "@mui/icons-material/Pets";
 import { InputBase } from "@mui/material";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import Notifications from "@mui/icons-material/Notifications";
+import { useState } from "react";
 function Navbar() {
+  const [open, setOpen] = useState(false);
   const StyledToolBar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
@@ -55,6 +65,7 @@ function Navbar() {
             <Notifications />
           </Badge>
           <Avatar
+            onClick={(e) => setOpen(true)}
             sx={{
               width: "30px",
               height: "30px",
@@ -63,7 +74,10 @@ function Navbar() {
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
         </Icons>
-        <UserBox sx={{ display: { xs: "flex", sm: "none" } }}>
+        <UserBox
+          onClick={(e) => setOpen(true)}
+          sx={{ display: { xs: "flex", sm: "none" } }}
+        >
           <Typography variant="span">Ertug</Typography>
           <Avatar
             sx={{ width: "30px", height: "30px" }}
@@ -71,6 +85,25 @@ function Navbar() {
           />
         </UserBox>
       </StyledToolBar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={(e) => setOpen(false)}
+        onClick={(e) => setOpen(false)}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 }
