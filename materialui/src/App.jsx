@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Rightbar from "./components/Rightbar";
 import Feed from "./components/Feed";
+import Add from "./components/Add";
+
 function App() {
   return (
     <Box sx={{ paddingTop: "56px" }}>
@@ -15,6 +17,7 @@ function App() {
         <Feed />
         <Rightbar />
       </Stack>
+      <Add />
     </Box>
   );
 }
