@@ -1,6 +1,6 @@
 # What is this Project ?
 
-Hi,i made this project for learn MaterialUI.This project have sidebar,rightbar and feed section.It's like a simple twitter example project, cause of this you can't post an image or something.
+Hi,i made this project for learn MaterialUI.This project have sidebar,rightbar and feed section.It's like a simple twitter example project, cause of this you can't post an image or something.I made this for do practice on materialUI.
 
 # Getting Started 
 
